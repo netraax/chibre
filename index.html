@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinted Analytics - Analysez vos performances de vente</title>
+    <!-- Ajout des styles Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body class="bg-gray-50">
+    <header class="bg-white shadow-sm">
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img src="/src/assets/logo.svg" alt="Vinted Analytics Logo" class="h-8">
+                <h1 class="text-2xl font-bold text-[#09B1BA]">Vinted Analytics</h1>
+            </div>
+            <div class="flex space-x-4">
+                <a href="/" class="text-gray-600 hover:text-[#09B1BA]">Accueil</a>
+                <a href="/analyse" class="text-gray-600 hover:text-[#09B1BA]">Analyse Pro</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <!-- Page d'accueil -->
+        <section id="home" class="space-y-8">
+            <!-- Contenu existant... -->
+        </section>
+
+        <!-- Section résultats -->
+        <section id="results" class="hidden space-y-8">
+        </section>
+    </main>
+
+    <footer class="bg-gray-100 mt-16">
+        <div class="container mx-auto px-4 py-8">
+            <p class="text-center text-gray-600">Vinted Analytics - Analysez vos performances de vente en toute simplicité</p>
+        </div>
+    </footer>
+
+    <!-- Correction: Ajout du type module -->
+    <script type="module" src="/src/behaviors/main.behavior.js"></script>
+</body>
+</html>
