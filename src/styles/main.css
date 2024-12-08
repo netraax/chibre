@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+.chart-container {
+    position: relative;
+    height: 400px;
+    width: 100%;
+}
+
+.vinted-button {
+    @apply bg-[#09B1BA] text-white px-6 py-2 rounded-lg hover:bg-[#0a9ba3] transition-colors;
+}
+
+.vinted-button-secondary {
+    @apply bg-gray-200 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-300 transition-colors;
+}
+
+.input-area {
+    @apply w-full p-4 border rounded-lg focus:ring-2 focus:ring-[#09B1BA] focus:border-transparent;
+}
+
+/* Print styles for PDF export */
+@media print {
+    .no-print {
+        display: none;
+    }
+    
+    .page-break {
+        page-break-before: always;
+    }
+    
+    canvas {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+}
