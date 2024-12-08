@@ -3,8 +3,8 @@ import autoprefixer from 'autoprefixer';
 import tailwindcss from 'tailwindcss';
 
 export default defineConfig({
-  base: '/',
-  plugins: [],
+  root: '.', // Spécifie le répertoire racine
+  base: '/', // Important pour le déploiement
   css: {
     postcss: {
       plugins: [
@@ -20,38 +20,16 @@ export default defineConfig({
       input: {
         main: './index.html',
       },
-      output: {
-        manualChunks: {
-          'vendor': [
-            'chart.js',
-            'html2pdf.js',
-            'dompurify',
-            'date-fns'
-          ]
-        },
-        chunkFileNames: 'assets/js/[name]-[hash].js',
-        entryFileNames: 'assets/js/[name]-[hash].js',
-        assetFileNames: 'assets/[ext]/[name]-[hash].[ext]'
-      }
     },
     sourcemap: process.env.NODE_ENV === 'development',
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true
-      }
-    }
   },
   server: {
     port: 3000,
-    open: true,
-    cors: true
+    open: true
   },
-  preview: {
-    port: 8080
-  },
-  optimizeDeps: {
-    include: ['chart.js', 'html2pdf.js', 'dompurify', 'date-fns']
+  resolve: {
+    alias: {
+      '@': '/src' // Permet d'utiliser @/components dans les imports
+    }
   }
 });
